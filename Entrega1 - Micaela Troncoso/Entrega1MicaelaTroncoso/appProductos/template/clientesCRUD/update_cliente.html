@@ -1,0 +1,13 @@
+{% extends "home.html" %}
+
+{% load static %}
+
+{% block contenido %}
+<form method="POST">{% csrf_token %}
+    <table>
+        {{ formulario.as_table }}
+    </table>
+    <button type="submit" class="btn btn-success" >Actualizar Cliente</button>
+</form>
+
+{% endblock %}

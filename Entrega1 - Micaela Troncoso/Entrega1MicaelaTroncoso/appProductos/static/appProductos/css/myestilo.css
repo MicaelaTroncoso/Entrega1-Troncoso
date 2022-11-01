@@ -1,0 +1,25 @@
+.contenido1{
+    position: center;
+    display: flex;
+    flex-direction: column;
+    top: 60px;
+    transform : translate(0px , 75px);
+    border: 6px dashed rgb(37, 30, 91);
+}
+.contenidoCliente{
+    background-color: rgb(75, 62, 214);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+.formDataCliente{
+    position: center;
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    gap: 10px;
+    background-color: rgb(17, 8, 37);
+    border-radius: 8px;
+    padding: 20px;
+}

@@ -1,0 +1,35 @@
+{% extends "home.html" %}
+
+{% load static %}
+
+{% block contenido %}
+<form class="formDataCliente" action="/appProductos/buscar_producto/" method="GET">
+    <input type="producto" name="producto" placeholder="Nombre del producto">
+    <button type="submit" class="btn btn-primary btndj">Buscar</button>
+
+</form>
+
+{% if busc_productos %}
+    <ul>
+        {% for busc_producto in busc_productos %}
+        <li> Producto: {{busc_producto.producto}} </li>
+        <li> Descripcion: {{busc_producto.descripcion}} </li>
+        <li> Precio s/iva: {{busc_producto.precio_sin_iva}} </li>
+        <li> Iva: {{busc_producto.iva}} </li>
+        <a> -------------------------------------- </a>
+        {% endfor %}
+    </ul>
+{% else %}
+    {% for producto in productos %}
+        <li>
+            {{ producto }}
+            <a href="/appProductos/update_producto/{{producto.id}}" class="btn btn-warning">Edit</a>
+            <a href="/appProductos/delete_producto/{{producto.id}}" class="btn btn-danger">Delete</a>
+        </li>
+        <br>
+    {% endfor %}
+    <a class="btn btn-success" href="/appProductos/create_producto">+ Agregar un nuevo producto</a>
+    
+{% endif %}
+
+{% endblock %}
